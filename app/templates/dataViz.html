@@ -1,0 +1,27 @@
+
+
+<div ng-controller="homeCtrl">
+
+    <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">
+                <md-input-container class="md-block" flex-gt-sm>
+                    <md-select ng-model="elementToVisualize">
+                        <md-option>Pedestrians</md-option>
+                        <md-option>Cyclists</md-option>
+                    </md-select>
+                </md-input-container>
+
+                by Hour</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content flex layout-padding>
+
+
+        <svg width="960" height="500"></svg>
+
+
+    </md-content>
+
+</div>
