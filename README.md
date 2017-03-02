@@ -5,8 +5,8 @@ In order to visualize this data, I started with a use case in which this data ma
 data when assessing the traffic impacts of a new construction.  Counts are used to predict future traffic due to increased vehicle, pedestrian
 and bicycle movements.  Planner traditionally look at data over 15 minute increments and select the hour in which the highest
 traffic volume was observed.  As such, this visualization allows users to see the data broken into 15 minute increments and view
-the cumalitive hourly pedestrian and bicycle counts.  Viewers are also able to see data summarized by hour.  While this view is
-not particurally compelling given the limited timeframe of this data, I believe viewing data by hour will be increasingly useful as
+the cumulative hourly pedestrian and bicycle counts.  Viewers are also able to see data summarized by hour.  While this view is
+not particularly compelling given the limited timeframe of this data, I believe viewing data by hour will be increasingly useful as
 more data is added to the UI.
 
 As pedestrian and cycle counts are typically analyzed separately, this visualization is structured with the assumption that viewers are interested in looking at either bicycle counts or pedestrian counts.
