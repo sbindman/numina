@@ -2,24 +2,77 @@
 
 <div ng-controller="homeCtrl">
 
-    <md-toolbar class="md-warn">
+    <md-toolbar class="header">
         <div class="md-toolbar-tools">
-            <h2 class="md-flex">
-                <md-input-container class="md-block" flex-gt-sm>
-                    <md-select ng-model="elementToVisualize">
-                        <md-option>Pedestrians</md-option>
-                        <md-option>Cyclists</md-option>
-                    </md-select>
-                </md-input-container>
-
-                by Hour</h2>
+            <h2 class="md-flex">Numina Dashboard</h2>
         </div>
     </md-toolbar>
 
-    <md-content flex layout-padding>
+    <md-content>
 
+        <md-toolbar class="sub-header">
+            <div class="md-toolbar-tools">
+                <h3 class="md-flex"><md-input-container class="" flex-gt-sm>
+                    <md-select ng-model="elementToVisualize" ng-change="togglePedestrian()">
+                        <md-option ng-selected="true">Pedestrians</md-option>
+                        <md-option >Bicyclists</md-option>
+                    </md-select>
+                </md-input-container>
 
-        <svg width="960" height="500"></svg>
+                    by
+
+                    <md-input-container class="" flex-gt-sm>
+                        <md-select ng-model="timeToVisualize" ng-change="toggleInterval()">
+                            <md-option>Hour</md-option>
+                            <md-option ng-selected="true">15 Minute Intervals</md-option>
+                        </md-select>
+                    </md-input-container></h3>
+            </div>
+        </md-toolbar>
+
+        <svg id="chart" width="800" height="200"></svg>
+
+        <md-toolbar class="sub-header">
+            <div class="md-toolbar-tools">
+                <h3 class="md-flex">Tabular Data</h3>
+            </div>
+        </md-toolbar>
+
+        <table ng-show="showHour">
+            <tr>
+                <th >Time</th>
+                <th >Pedestrian Count</th>
+                <th>Bicyclist Count</th>
+
+            </tr>
+            <tr ng-repeat="d in tableData">
+                <td class="data-cell">{{d.time | date : 'h:mm a'}}</td>
+                <td class="data-cell">{{d.pedestrian}}</td>
+                <td class="data-cell">{{d.bicyclists}}</td>
+            </tr>
+        </table>
+
+        <table  ng-show="!showHour">
+            <tr>
+                <th rowspan="2">Time</th>
+                <th class="header-cell" colspan="2">15 Minute Total</th>
+                <th class="header-cell" colspan="2">1 Hour Running Total</th>
+
+            </tr>
+            <tr>
+                <th>Pedestrian Count</th>
+                <th>Bicyclist Count</th>
+                <th>Pedestrian Count </th>
+                <th>Bicyclist Count</th>
+            </tr>
+            <tr ng-repeat="d in tableData" ng-class="{max : d.max}">
+                <td class="data-cell">{{d.time | date : 'h:mm a'}}</td>
+                <td class="data-cell">{{d.pedestrian}}</td>
+                <td class="data-cell">{{d.bicyclists}}</td>
+                <td class="data-cell">{{d.pedHourTotal || '-'}}</td>
+                <td class="data-cell">{{d.bikeHourTotal || '-'}}</td>
+            </tr>
+        </table>
 
 
     </md-content>

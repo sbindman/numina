@@ -8,6 +8,7 @@
   "devDependencies": {},
   "scripts": {},
   "dependencies": {
+    "less": "^2.7.2",
     "underscore": "1.8.3"
   }
 }

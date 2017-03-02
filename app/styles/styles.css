@@ -1,0 +1,43 @@
+.header {
+  background-color: #222222 !important;
+}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: white;
+}
+md-select:not([disabled]):focus ._md-select-value {
+  border-bottom-color: white;
+  color: white;
+}
+md-content {
+  padding: 0;
+  margin: 0;
+}
+md-content .sub-header {
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  background-color: #49c983;
+}
+md-content svg {
+  padding: 20px 0;
+  width: 100vw;
+}
+md-content table {
+  border-collapse: collapse;
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+md-content table tr.max {
+  background-color: rgba(77, 185, 224, 0.3);
+}
+md-content table th.header-cell {
+  border-bottom: 1px solid black;
+}
+md-content table td {
+  padding: 5px;
+  text-align: center;
+}
+md-content table td.data-cell {
+  border-top: 1px dashed lightgrey;
+  border-bottom: 1px dashed lightgrey;
+}
